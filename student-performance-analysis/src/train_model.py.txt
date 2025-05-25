@@ -1,0 +1,16 @@
+from preprocessing import load_and_clean_data, preprocess_features
+from sklearn.ensemble import RandomForestRegressor
+import joblib
+import os
+
+if __name__ == "__main__":
+    df = load_and_clean_data("data/Student_Habits_Dataset.csv")
+    X_train, X_test, y_train, y_test = preprocess_features(df)
+
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
+    model.fit(X_train, y_train)
+
+    os.makedirs("models", exist_ok=True)
+    joblib.dump(model, "models/student_performance_model.pkl")
+
+    print("✅ Model trained and saved to models/student_performance_model.pkl")
