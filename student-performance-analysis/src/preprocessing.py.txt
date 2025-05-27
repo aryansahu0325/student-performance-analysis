@@ -2,8 +2,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-def load_and_clean_data(filepath):
-    df = pd.read_csv(filepath)
+def load_and_clean_data(D:\B.TECH\B.Tech SEM IV\DA\Project\student-performance-analysis\src):
+    df = pd.read_csv(D:\B.TECH\B.Tech SEM IV\DA\Project\student-performance-analysis\src)
     df = df.drop(columns=['Student_ID'])  # remove non-informative ID column
     return df.dropna()  # remove missing values if any
 
